@@ -1,24 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HVD_Comic_Serif_Pro.otf">
+            <string>HVDComicSerifPro</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="Add_1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cuH-zN-ukf"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Rm-IB-UMx"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="HFL-1j-wx5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score" translatesAutoresizingMaskIntoConstraints="NO" id="9X7-5m-YAE">
+                                <rect key="frame" x="20" y="50" width="120" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="F0D-eq-YV0"/>
+                                    <constraint firstAttribute="width" constant="120" id="nzs-JW-eKT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LK5-uX-KD1">
+                                <rect key="frame" x="55.666666666666657" y="62" width="49" height="26"/>
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="zvm-Ks-giO">
+                                <rect key="frame" x="264" y="50" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="9pd-16-sss"/>
+                                    <constraint firstAttribute="height" constant="50" id="LXc-2v-Chg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8V-nK-rCR">
+                                <rect key="frame" x="291.33333333333331" y="62" width="55.333333333333314" height="26"/>
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="number" translatesAutoresizingMaskIntoConstraints="NO" id="Pcc-qN-Nkx">
+                                <rect key="frame" x="57" y="160" width="300" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="YwN-SW-O87"/>
+                                    <constraint firstAttribute="width" constant="300" id="uwN-E8-m8b"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMf-aa-7KV">
+                                <rect key="frame" x="129" y="184.33333333333334" width="156" height="81.666666666666657"/>
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="70"/>
+                                <color key="textColor" red="0.53036947204246576" green="0.30918590011095892" blue="0.12899921573835618" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" background="input" translatesAutoresizingMaskIntoConstraints="NO" id="l5X-4B-3TJ">
+                                <rect key="frame" x="82" y="310" width="250" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="OWW-1A-VoI"/>
+                                    <constraint firstAttribute="width" constant="250" id="Xld-Nz-jfR"/>
+                                </constraints>
+                                <color key="textColor" red="0.41165453769999999" green="0.65921583309999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="70"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="inputFieldDidChange" destination="BYZ-38-t0r" eventType="editingChanged" id="JTh-Tf-9KZ"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add 1 to each of the digits. So, 1357 becomes 2468." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLt-SJ-Nt7">
+                                <rect key="frame" x="37.333333333333343" y="747" width="339.66666666666663" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="375" id="3UY-yB-Mau"/>
+                                    <constraint firstAttribute="height" constant="65" id="dIS-a8-MjC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LK5-uX-KD1" firstAttribute="centerY" secondItem="9X7-5m-YAE" secondAttribute="centerY" id="1VO-83-a41"/>
+                            <constraint firstItem="HFL-1j-wx5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6p9-pG-qaj"/>
+                            <constraint firstAttribute="bottom" secondItem="HFL-1j-wx5" secondAttribute="bottom" id="84g-oq-5ee"/>
+                            <constraint firstItem="Pcc-qN-Nkx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I81-c0-OnD"/>
+                            <constraint firstItem="RMf-aa-7KV" firstAttribute="centerX" secondItem="Pcc-qN-Nkx" secondAttribute="centerX" id="Jtf-Ne-1ou"/>
+                            <constraint firstItem="i8V-nK-rCR" firstAttribute="centerY" secondItem="zvm-Ks-giO" secondAttribute="centerY" id="LZI-Yc-JGa"/>
+                            <constraint firstItem="zvm-Ks-giO" firstAttribute="top" secondItem="cuH-zN-ukf" secondAttribute="bottom" constant="6" id="MRL-sS-GM8"/>
+                            <constraint firstItem="dLt-SJ-Nt7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N7t-5h-edS"/>
+                            <constraint firstItem="7Rm-IB-UMx" firstAttribute="top" secondItem="dLt-SJ-Nt7" secondAttribute="bottom" constant="50" id="O0C-xP-81T"/>
+                            <constraint firstItem="HFL-1j-wx5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="PWa-47-nuz"/>
+                            <constraint firstItem="Pcc-qN-Nkx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qqh-zi-M1F"/>
+                            <constraint firstItem="9X7-5m-YAE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="TUE-ii-yzd"/>
+                            <constraint firstItem="i8V-nK-rCR" firstAttribute="centerX" secondItem="zvm-Ks-giO" secondAttribute="centerX" constant="-20" id="Urk-Ut-22p"/>
+                            <constraint firstAttribute="trailing" secondItem="HFL-1j-wx5" secondAttribute="trailing" id="Usc-xo-iJP"/>
+                            <constraint firstItem="9X7-5m-YAE" firstAttribute="top" secondItem="cuH-zN-ukf" secondAttribute="bottom" constant="6" id="X2c-c5-lWZ"/>
+                            <constraint firstAttribute="trailing" secondItem="zvm-Ks-giO" secondAttribute="trailing" id="aeg-XB-Kj6"/>
+                            <constraint firstItem="RMf-aa-7KV" firstAttribute="centerY" secondItem="Pcc-qN-Nkx" secondAttribute="centerY" id="bvJ-s2-bzR"/>
+                            <constraint firstItem="l5X-4B-3TJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hFJ-zE-bMJ"/>
+                            <constraint firstItem="Pcc-qN-Nkx" firstAttribute="top" secondItem="9X7-5m-YAE" secondAttribute="bottom" constant="60" id="mSc-2Q-1sg"/>
+                            <constraint firstItem="l5X-4B-3TJ" firstAttribute="top" secondItem="Pcc-qN-Nkx" secondAttribute="bottom" constant="20" id="wbJ-Mg-Nho"/>
+                            <constraint firstItem="LK5-uX-KD1" firstAttribute="centerX" secondItem="9X7-5m-YAE" secondAttribute="centerX" id="wxx-XW-Tbx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputField" destination="l5X-4B-3TJ" id="JxT-S0-Nus"/>
+                        <outlet property="numberLabel" destination="RMf-aa-7KV" id="BKF-EE-IST"/>
+                        <outlet property="scoreLabel" destination="LK5-uX-KD1" id="6ux-Qd-z7w"/>
+                        <outlet property="timeLabel" destination="i8V-nK-rCR" id="siY-Pk-Zij"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-57.971014492753625" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="375" height="667"/>
+        <image name="input" width="256" height="111"/>
+        <image name="number" width="300" height="122"/>
+        <image name="score" width="119" height="51"/>
+        <image name="time" width="149" height="49"/>
+    </resources>
 </document>
